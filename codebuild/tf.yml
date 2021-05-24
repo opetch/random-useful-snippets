@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - export TF_VERSION="0.12.23"
+      - wget -nv -O /tmp/terraform_${TF_VERSION}_linux_amd64.zip https://releases.hashicorp.com/terraform/0.12.28/terraform_${TF_VERSION}_linux_amd64.zip
+      - unzip /tmp/terraform_${TF_VERSION}_linux_amd64.zip -d /usr/local/bin/
+      - chmod +x /usr/local/bin/terraform
+  build:
+    commands:
+      - echo TODO
